@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Care | Customer Segmentation</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="Customer.css">
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+  
+</head>
+<body>
+    <!--Header Section -->
+    <header class="header text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="Skin Care Logo"> Skin Care</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="Start.html">Start</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Search.html">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Statistics.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#">Customer Segmentation</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--End Header Section -->
+
+    <div class="container customer">    
+        <h3>Customer Groups</h3>    
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/images/group1.png" class="card-img-top" alt="Young Adults">
+                    <div class="card-body Personas">
+                        <h5 class="card-title">Young Adults</h5>
+                        <p class="card-text">Skincare needs focused on acne treatment and prevention, hydration, and sun protection.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/images/group2.png" class="card-img-top" alt="Middle-aged Adults">
+                    <div class="card-body Personas">
+                        <h5 class="card-title">Middle-aged Adults</h5>
+                        <p class="card-text">Focus on anti-aging products, skin firmness, and hydration.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/images/group3.png" class="card-img-top" alt="Seniors">
+                    <div class="card-body Personas">
+                        <h5 class="card-title">Seniors</h5>
+                        <p class="card-text">Products that target deep wrinkles, skin thinning, and dryness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>Customer Personas</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/images/personas.png" class="card-img-top" alt="Persona 1: Emily">
+                    <div class="card-body Personas">
+                        <h5 class="card-title">Persona 1: Emily</h5>
+                        <p class="card-text">21 years old, college student, struggling with acne and looking for affordable skincare solutions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/images/persona2.png" class="card-img-top" alt="Persona 2: Mark">
+                    <div class="card-body Personas">
+                        <h5 class="card-title">Persona 2: Mark</h5>
+                        <p class="card-text">45 years old, corporate professional, focusing on anti-aging and maintaining a youthful appearance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="assets/images/persona3.png" class="card-img-top" alt="Persona 3: Linda">
+                    <div class="card-body Personas">
+                        <h5 class="card-title">Persona 3: Linda</h5>
+                        <p class="card-text">69 years old, retired, seeking products that address deep wrinkles and skin dryness.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Customer Satisfaction</h5>
+                        <div class="char-container">
+                            <canvas id="barChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Age Group Distribution</h5>
+                        <div class="chart-container">
+                            <canvas id="pieChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Footer Section -->
+     <footer class="footer text-white text-center mt-5">
+        <p>&copy; A Prototype for the Masters Project: Enhancing Personalized Marketing Strategies for Facial Skincare Products Through Predictive Customer Segmentation</p>
+    </footer>
+      <!-- End Footer Section -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var ctxBar = document.getElementById('barChart').getContext('2d');
+        var barChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: ['Very Satisfied', 'Satisfied', 'Neutral', 'Dissatisfied', 'Very Dissatisfied'],
+                datasets: [{
+                    label: 'Customer Satisfaction',
+                    data: [12, 19, 3, 5, 2, ],
+                    backgroundColor: 'rgb(217, 6, 225)',
+                    borderColor: 'rgb(217, 6, 225)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        var ctxPie = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(ctxPie, {
+            type: 'pie',
+            data: {
+                labels: ['Young Adults', 'Middle-aged Adults', 'Seniors'],
+                datasets: [{
+                    label: 'Age Group Distribution',
+                    data: [55, 25, 20],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.8)',
+                        'rgba(54, 162, 235, 0.8)',
+                        'rgba(255, 206, 86, 0.8)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            }
+        });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
